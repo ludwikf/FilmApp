@@ -1,0 +1,23 @@
+﻿@model FilmApp.Models.Film
+
+<h2>Dodaj Nowy Film</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Name">Nazwa</label>
+        <input type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label for="Description">Opis</label>
+        <textarea asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label for="Price">Cena</label>
+        <input type="number" asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <button type="submit">Dodaj</button>
+    <a href="@Url.Action("Index", "Film")">Powrót</a>
+</form>

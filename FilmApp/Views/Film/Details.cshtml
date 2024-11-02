@@ -1,0 +1,17 @@
+﻿@model FilmApp.Models.Film
+
+<h2>Szczegóły Filmu</h2>
+
+<div>
+    <strong>Nazwa:</strong> @Model.Name
+</div>
+<div>
+    <strong>Opis:</strong> @Model.Description
+</div>
+<div>
+    <strong>Cena:</strong> @Model.Price zł
+</div>
+
+<a href="@Url.Action("Index", "Film")">Powrót do listy</a>
+<a href="@Url.Action("Edit", "Film", new { id = Model.Id })">Edytuj</a>
+<a href="@Url.Action("Delete", "Film", new { id = Model.Id })">Usuń</a>

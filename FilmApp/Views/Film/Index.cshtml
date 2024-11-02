@@ -1,0 +1,21 @@
+﻿@model IEnumerable<FilmApp.Models.Film>
+
+<h2>Lista Filmów</h2>
+<table>
+    <tr>
+        <th>Nazwa</th>
+        <th>Opcje</th>
+    </tr>
+    @foreach (var film in Model)
+    {
+        <tr>
+            <td>@film.Name</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@film.Id">Szczegóły</a> |
+                <a asp-action="Edit" asp-route-id="@film.Id">Edytuj</a> |
+                <a asp-action="Delete" asp-route-id="@film.Id">Usuń</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("Create", "Film")">Dodaj nowy film</a>
